@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <script>
+            $link1 = $("<div>")
+              .css("background-color","red")
+              .css("width","150px")
+              .css("height","150px")
+              .css("position","relative")
+                .css("margin-left", "auto")
+              .css("margin-right", "auto");
+            
+            $link2 = $("<div>")
+              .css("background-color","green")
+              .css("width","150px")
+              .css("height","150px")
+              .css("position","relative")
+                .css("margin-left", "auto")
+              .css("margin-right", "auto");
+            
+            $link3 = $("<div>")
+              .css("background-color","blue")
+              .css("width","150px")
+              .css("height","150px")
+              .css("position","relative")
+              .css("margin-left", "auto")
+              .css("margin-right", "auto");
+
+            $link4=$("<button>")
+            .text("Animate")
+            $("body").append($link1).append($("<br/>")).append($link2).append($("<br/>")).append($link3).append($("<br/>")).append($link4);
+            
+            
+            $link1.click(function(){
+              $link1.delay(5000).animate({"right":"300px"}, "slow");
+              $link1.delay(5000).animate({"right":"-=300px"}, "slow");
+            });
+              
+            $link2.click(function(){
+              $link2.delay(5000).animate({"left":"300px","height":"+=150px","width": "+=150px"}, "slow");
+              $link2.delay(5000).animate({"left":"-=300px","height":"-=150px","width": "-=150px"}, "slow");
+            });
+            
+            $link3.click(function(){
+              $link3.delay(5000).animate({"top":"-=300px","height":"-=140px","width":"-=140px"}, "slow");
+              $link3.animate({"left":"300px"}, "slow");
+              $link3.animate({"top":"+=300px"}, "slow");
+              $link3.animate({"left":"-=300px","height":"+=140","width":"+=140"}, "slow");
+            });
+
+            $link4.off("click").on("click",function(){
+                $link1.click();
+                $link2.click();
+                $link3.click();
+                
+            });
+            </script>
+    </body>
+</html>
